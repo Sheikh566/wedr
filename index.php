@@ -1,8 +1,3 @@
-<?php 
-  $weekDays = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
-  $todayWeekDay = date('w', strtotime(date("Y-m-d") ));
-  array_splice($weekDays, $todayWeekDay);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +17,7 @@
   <div class="container">
     <div class="navbar">
       <img src="./icons/default.svg" alt="logo" height="50px">
-      <h4>github: <a href="#">sheikh566</a></h4>
+      <h4>github: <a href="https://github.com/Sheikh566/wedr">sheikh566</a></h4>
     </div>
     <div class="search-box">
       <input 
