@@ -1,7 +1,7 @@
 # Wedr
 ## A weather tracking widget.
 #
-#
+# Live: https://sheikh566.github.io/wedr
 [![N|Solid](https://i2.paste.pics/HK926.png)](https://nodesource.com/products/nsolid)
 
 ## Features
