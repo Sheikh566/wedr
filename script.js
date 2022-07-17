@@ -1,5 +1,5 @@
 const myKey = "41759ebdb94742f088f113131220807";
-const baseURL = "http://api.weatherapi.com/v1/forecast.json?key="+myKey;
+const baseURL = "https://api.weatherapi.com/v1/forecast.json?key="+myKey;
 
 function getIconPath(urlString) {
   return urlString.replace('//cdn.weatherapi.com/weather/64x64/', 'icons/');
