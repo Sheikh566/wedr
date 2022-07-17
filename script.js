@@ -19,6 +19,7 @@ function getHourFromTime(timeStr) {
   return currTime.split(':')[0];
 }
 
+// Generate forecast of next 15 hours from API response, with 3 hours of interval
 function generateForecast(data) {
   let currHour = getHourFromTime(data.current.last_updated);
   let forecastDaysArray = data.forecast.forecastday;
@@ -80,8 +81,11 @@ function fetchAndUpdateUI(query) {
         $(rainChanceElems[i]).text(next_15_hours[next_15_hours_keys[i]][1]+"%");
       }
     },
-    error: (err) => {
-      const alertBox = $('#alert-box')
+    error: ({ responseJSON }) => {
+      // Pops up alert box with error message.
+      const message = "Error: " + responseJSON.error.message;
+      const alertBox = $('#alert-box');
+      alertBox.text(message);
       alertBox.removeClass('off');
       setTimeout(() => {
         alertBox.addClass('off')
@@ -93,8 +97,8 @@ function fetchAndUpdateUI(query) {
 $(document).ready(function() {
   $('#alert-box').addClass('off');
   const searchBtn = $(".search-btn");
-  searchBtn.attr('disabled', $(this).val().trim() == '');
   // Disables search button if text field is empty'ish
+  searchBtn.attr('disabled', $(this).val().trim() == '');
   $("#search").on('input', function () {
     searchBtn.attr('disabled', $(this).val().trim() == '');
   });
@@ -110,4 +114,3 @@ $(document).on('keypress',function(e) {
       animateAndFetch();
   }
 });
-

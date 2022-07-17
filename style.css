@@ -315,13 +315,13 @@ div#alert-box {
     color: white;
     position: absolute;
     margin-top: -60px;
-    animation: alert 3s linear;
+    animation: alert 5s linear;
 }
 div#alert-box.off {
 	animation-name: none;	
 }
 @keyframes alert {
     0% { margin-top: -60px;}
-    5% { margin-top: 30px;}
+    4% { margin-top: 30px;}
     100% { margin-top: 30px; }
 }
